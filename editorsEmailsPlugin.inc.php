@@ -6,10 +6,13 @@
  * Copyright (c) 2003-2009 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
+ * With contributions from:
+ * 	- 2014 Instituto Nacional de Investigacion y Tecnologia Agraria y Alimentaria
+ *
  * @class editorsEmailsPlugin
  * @ingroup plugins_generic_editorsEmails
  *
- * @brief Google Analytics plugin class
+ * @brief editors Emails plugin class
  */
 
 // $Id: editorsEmailsPlugin.inc.php,v 1.13 2009/09/22 21:20:37 asmecher Exp $

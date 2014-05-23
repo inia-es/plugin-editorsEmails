@@ -7,14 +7,17 @@
   * Copyright (c) 2003-2011 John Willinsky
   * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
   *
-  * Google Analytics plugin localization strings for the en_US (U.S. English) locale.
+  * With contributions from:
+  * 	- 2014 Instituto Nacional de Investigacion y Tecnologia Agraria y Alimentaria
+  *
+  * editors Emails plugin localization strings for the en_US (U.S. English) locale.
   *
   * $Id$
   -->
  
 <locale name="en_US" full_name="U.S. English">
 
-	<!-- Google Analytics -->
+	<!-- editors Emails -->
 	<message key="plugins.generic.editorsEmails.displayName">Insert emails Editors Plugin</message>
 	<message key="plugins.generic.editorsEmails.description"><![CDATA[Integrate OJS editorsEmais, insert in editordecisionEmail email to editors.]]></message>
 

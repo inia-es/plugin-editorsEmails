@@ -35,10 +35,6 @@ class editorsEmailsPlugin extends GenericPlugin {
 		if ($success) {
 			// Insert in email editor-athor mails editors   
 			HookRegistry::register('Templates::submission::comment::editorDecisionEmail', array($this, 'inserteditorsEmails'));
-
-			
-   
-			
 		}
 		return $success;
 	}
@@ -73,17 +69,12 @@ class editorsEmailsPlugin extends GenericPlugin {
 		} else {
 			$params['path'] = $path;
 		}
-
 		if (!empty($params['id'])) {
 			$params['path'] = array_merge($params['path'], array($params['id']));
 			unset($params['id']);
 		}
 		return $smarty->smartyUrl($params, $smarty);
 	}
-
-	
-
-
 
 	/**
 	 * Determine whether or not this plugin is enabled.
@@ -110,7 +101,6 @@ class editorsEmailsPlugin extends GenericPlugin {
 	 * Insert editorsEmails  page tag to editorDecisionEmail.tpl
 	 */  
 	function inserteditorsEmails($hookName, $params) {
-		
 		if ($this->getEnabled()) {
 			$smarty =& $params[1];
 			$output =& $params[2];
@@ -125,22 +115,16 @@ class editorsEmailsPlugin extends GenericPlugin {
 				import('classes.security.RoleDao');
 				$roleDAO = & DAORegistry::getDAO('RoleDAO');
 				$editors = $roleDAO->getUsersByRoleId(ROLE_ID_EDITOR,$journalId);
-//
-import('lib.pkp.classes.user.PKPUser');
 				while (!$editors->eof()) {
-//					print_r($editors);
 					$editor = $editors->next();
 		                        $affiliations = $editor->getAffiliation($locale);
-//		                        if (is_array($affiliations)) {print('is array<br>');}             
 					
                           		if (stristr($affiliations[en_US],'Chief scientific editor')!== false){
 						
 						$chiefEditorAddresses[$editor->getEmail()] = $editor->getFullName();}
 				elseif (stristr($affiliations[en_US],'Section Editor')!== false){
 					
-//					print_r($editor->getAffiliation($locale));
 					$sectionEditorAddresses[$editor->getEmail()] = $editor->getFullName();}
-					
 				}
 
                               $contactEmail = $journal->getSetting('contactEmail');
@@ -153,11 +137,9 @@ import('lib.pkp.classes.user.PKPUser');
                               $templateMgr->assign('chiefEditorAddresses', $chiefEditorAddresses);
 			      $templateMgr->assign('sectionEditorAddresses', $sectionEditorAddresses);
 		
-						$output .= $templateMgr->fetch($this->getTemplatePath() . 'pageEditorsEmails.tpl'); 
-		
+				$output .= $templateMgr->fetch($this->getTemplatePath() . 'pageEditorsEmails.tpl'); 
 				}
 			}
-		
 		return false;
 	}
 

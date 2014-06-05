@@ -19,7 +19,7 @@
 
 	<!-- editors Emails -->
 	<message key="plugins.generic.editorsEmails.displayName">Insert emails Editors Plugin</message>
-	<message key="plugins.generic.editorsEmails.description"><![CDATA[Integrate OJS editorsEmais, insert in editordecisionEmail email to editors.]]></message>
+	<message key="plugins.generic.editorsEmails.description">Integrate OJS editorsEmais, insert in editordecisionEmail email to editors.</message>
 
 	
 </locale>

@@ -112,7 +112,7 @@ class editorsEmailsPlugin extends GenericPlugin {
 			if (!empty($currentJournal)) {
 				$journal =& Request::getJournal();
 				$journalId = $journal->getJournalId();
-				import('classes.security.RoleDao');
+				import('classes.security.RoleDAO');
 				$roleDAO = & DAORegistry::getDAO('RoleDAO');
 				$editors = $roleDAO->getUsersByRoleId(ROLE_ID_EDITOR,$journalId);
 				while (!$editors->eof()) {
